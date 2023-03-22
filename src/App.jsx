@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useFetch } from './useFetch'
 import './App.css'
 
 function App() {
 
-const [data, setData] = useState(null);
-
-useEffect(()=>{
-  fetch("https://aerolineatec.sistemas19.com/api/vuelos").then((response)=>response.json()).then((data)=>setData(data));
-},[]);
+const {data, loading, error} = useFetch("https://aerolineatec.sistemas19.com/api/vuelos");
 
   return (
     
@@ -15,7 +11,11 @@ useEffect(()=>{
         <div>
          <h1>Vuelos</h1> 
          <div>
-          {data?.map((vuelo)=>(<h2 key={vuelo.id}>{vuelo.destino}</h2>))}
+          <ul>
+            {error && <li>Error:{error}</li>}
+            {loading&&<li>Loading...</li>}
+            {data?.map((vuelo)=>( <li><h2 key={vuelo.id}>{vuelo.destino}</h2></li> ))}
+          </ul>
          </div>
       </div>
       </main>
