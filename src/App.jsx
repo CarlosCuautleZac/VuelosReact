@@ -21,9 +21,7 @@ const {data, loading, error} = useFetch("https://aerolineatec.sistemas19.com/api
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody>
-
-
+            <tbody> 
                     {error && <li>Error:{error}</li>}
                     {loading&&<li>Loading...</li>}
                     {data?.map((vuelo)=>( 
