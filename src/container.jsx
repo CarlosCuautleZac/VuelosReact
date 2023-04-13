@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import logo from "./assets/viajar.png"
 
 export function Container({data, loading, error}){
 
 return(
 <div className="container" >
-    <h2 className='text-center pb-2 mb-2'>Departures</h2>
+    <div className='divtittle'>
+        <label className='tittle'>Departures</label>
+        <img src="https://thumbs.dreamstime.com/b/jet-plane-icon-120405763.jpg"></img>
+    </div>
+
+    {/* <h1><i class="fas fa-plane-departure"></i>Departures</h1> */}
+
     <div className="table-responsive">
         <table className="table table-dark table-hover">
             <thead >
