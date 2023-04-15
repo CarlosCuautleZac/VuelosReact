@@ -125,7 +125,33 @@ table thead tr th{
 }
 
 .color {
-  color: black;
+  color: white;
+}
+
+
+.form-vuelo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+
+.modal-content {
+  background: whitesmoke;
+}
+
+
+.form-vuelo input{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-vuelo label{
+  display: inline-block;
+  width: 100%;
+  text-align: start;
+  
 }
 
 /* @media (max-width: 1280px) {
