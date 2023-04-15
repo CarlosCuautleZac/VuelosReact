@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Modal.css";
+import Swal from 'sweetalert2'
+
 // import { PostModule } from "../scripts/PostModule";
 
 export function Modal() {
@@ -33,7 +35,11 @@ export function Modal() {
         if(status.ok)
           {
             setModal(!modal);
-            alert("¡Enviado con exito!")
+            Swal.fire({
+              icon: 'success',
+              title: 'Exito',
+              text: "¡Se ha enviado el vuelo con exito!",
+            })
           }
             else{
               const text = await response.text();
@@ -41,8 +47,12 @@ export function Modal() {
             }        
           }
         )       
-        .catch((error) => {console.log(error)
-        alert(error)});
+        .catch(async (error) => {console.log(error)
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error,
+          })});
     });
   };
 
