@@ -33,7 +33,7 @@ export function Modal() {
 
            console.log(response)
         if(status.ok)
-          {
+          {          
             setModal(!modal);
             Swal.fire({
               icon: 'success',
@@ -111,5 +111,9 @@ export function Modal() {
     </>
   );
 }
+
+
+
+
 
 export default Modal;
